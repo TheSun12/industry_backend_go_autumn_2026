@@ -17,7 +17,7 @@ type LRUCache[K comparable, V any] struct {
 }
 
 func NewLRUCache[K comparable, V any](capacity int) *LRUCache[K, V] {
-	return &LRUCache[K, V] { capacity: capacity, ll: list.List{}, items: make(map[K]*list.Element) }
+	return &LRUCache[K, V]{capacity: capacity, ll: list.List{}, items: make(map[K]*list.Element)}
 }
 func (c *LRUCache[K, V]) Get(key K) (value V, ok bool) {
 	c.mutex_cache.Lock()
